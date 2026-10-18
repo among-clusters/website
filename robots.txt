@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://among-clusters.github.io/website/sitemap.xml
