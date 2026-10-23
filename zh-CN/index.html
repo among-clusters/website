@@ -1,14 +1,113 @@
 <!doctype html>
-<html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Among Clusters 以可审计、最小权限的方式记录 Kubernetes 集群之间的协作关系。"><title>Among Clusters — 可审计的多集群协作</title><link rel="stylesheet" href="../styles.css"></head>
-<body>
-  <header><a class="brand" href="../">Among Clusters</a><nav><a href="#platform">产品</a><a href="#start">快速开始</a><a href="https://github.com/orgs/among-clusters/projects">路线图</a><a href="../en/" lang="en">English</a></nav></header>
-  <main>
-    <section class="hero"><p class="kicker">受控 · 可审计 · 供应商中立</p><h1>让集群协作，不必共享万能钥匙。</h1><p class="lead">Among Clusters 记录协作关系、发布服务与审计证据，同时让每个参与集群继续掌握自己的凭据与运行时权威。</p><div class="actions"><a class="primary" href="#start">了解协作流程</a><a href="https://github.com/among-clusters/among-clusters">查看代码</a></div></section>
-    <section id="platform" class="cards"><article><span>01</span><h2>Among Clusters</h2><p>独立控制面记录协作状态，并根据明确授权协调关系。</p></article><article><span>02</span><h2>ConnecTool</h2><p>以 OIDC 与 RBAC 合约提供有边界的访问，不分发长期管理员凭据。</p></article><article><span>03</span><h2>Headlamp 检查</h2><p>用只读视图呈现健康、计量与证据，但不取代运行时权威。</p></article></section>
-    <section class="flow"><p class="kicker">协作流程</p><h2>邀请、批准、发布、观察。</h2><div class="rail"><div><b>1</b><strong>邀请</strong><small>源集群提出有范围、有期限的关系。</small></div><i>→</i><div><b>2</b><strong>批准</strong><small>目标集群接受明确身份与权限范围。</small></div><i>→</i><div><b>3</b><strong>发布</strong><small>只有获批服务与能力可以被发现。</small></div><i>→</i><div><b>4</b><strong>观察</strong><small>事件和证据保持可审计。</small></div></div></section>
-    <section id="start" class="split"><div><p class="kicker">从合约开始</p><h2>接入自己的集群，保留本地权威。</h2></div><div><ol><li>选择集群可以发布或消费的服务。</li><li>创建带有效期和明确范围的邀请。</li><li>在独立命名空间安装已签名 Agent Chart。</li><li>验证就绪状态与证据，再启用生产使用。</li></ol><a class="text-link" href="https://github.com/among-clusters/among-clusters">阅读运维指南 →</a></div></section>
-    <section class="callout"><p class="kicker">公开路线图</p><h2>以可评审的产品成果持续建设。</h2><p>在 GitHub 跟进产品、文档、官网和可靠性议题。私有拓扑、凭据和原始遥测不会进入公开路线图。</p><a class="primary button" href="https://github.com/orgs/among-clusters/projects">查看路线图</a></section>
-  </main>
-  <footer><span>Among Clusters</span><span>GitHub 协调 · Kubernetes 运行时权威</span><a href="https://github.com/among-clusters">GitHub</a></footer>
-</body></html>
+<html lang="zh-CN" data-site="among-clusters">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Among Clusters — 主权集群互联</title>
+    <meta name="description" content="Among Clusters 是面向 BYOC 服务的主权集群互联控制面。每个集群保留自己的 API Server、CA、RBAC 与生命周期权威。">
+    <meta name="theme-color" content="#f7f9fc">
+    <meta property="og:title" content="Among Clusters — 主权集群互联">
+    <meta property="og:description" content="Among Clusters 是面向 BYOC 服务的主权集群互联控制面。每个集群保留自己的 API Server、CA、RBAC 与生命周期权威。">
+    <meta property="og:url" content="https://among-clusters.github.io/website/zh-CN/">
+    <link rel="canonical" href="https://among-clusters.github.io/website/zh-CN/">
+    <link rel="alternate" hreflang="en" href="https://among-clusters.github.io/website/en/">
+    <link rel="alternate" hreflang="zh-CN" href="https://among-clusters.github.io/website/zh-CN/">
+    <link rel="alternate" hreflang="x-default" href="https://among-clusters.github.io/website/en/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://among-clusters.github.io/website/sitemap.xml">
+    <link rel="icon" type="image/svg+xml" href="../mark.svg">
+    <link rel="stylesheet" href="../styles.css?v=20261023-oss-1">
+    <link rel="stylesheet" href="https://brand-assets.re8ch.com/dist/current/re8ch-navigator.css">
+    <link rel="stylesheet" href="https://brand-assets.re8ch.com/dist/current/re8ch-footer.css">
+    <script src="../boot.js?v=20261023-oss-1"></script>
+    <script src="https://brand-assets.re8ch.com/dist/current/re8ch-navigator.js" defer></script>
+    <script src="https://brand-assets.re8ch.com/dist/current/re8ch-footer.js" defer></script>
+    <script src="../site.js?v=20261023-oss-1" defer></script>
+  </head>
+  <body>
+    <div class="shell">
+    <re8ch-navigator product="among-clusters" brand="Among Clusters" locale="zh-CN" home-href="../zh-CN/" links='[{"label":"握手","href":"../zh-CN/#handshake"},{"label":"信任模型","href":"../zh-CN/#trust"},{"label":"组件","href":"../zh-CN/#components"},{"label":"安装","href":"../zh-CN/#install"}]' language-options='[{"label":"English","value":"en","href":"../en/"},{"label":"简体中文","value":"zh-CN","href":"../zh-CN/"}]' language-mode="available" extra-actions='[]'></re8ch-navigator>
+    <main>
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <p class="eyebrow">Among Clusters <span class="tag">开源 · BYOC 互联</span></p>
+            <h1>互联那些不归你管的集群。</h1>
+            <p class="lead">Among Clusters 是主权集群互联控制面。每个 Kubernetes 集群都是独立的信任域。Hub 只分发签名身份、信任包与明确的服务公告，从不接收 Kubernetes 凭据，也不在数据路径上。</p>
+            <div class="actions"><a class="button primary" href="#trust">了解信任模型</a><a class="button" href="https://github.com/among-clusters/among-clusters" rel="noopener">查看代码</a></div>
+            <div class="stats"><div><span>Gateway 传输 (mTLS 1.3)</span><strong data-stat="transport">QUIC</strong></div><div><span>互联资源</span><strong data-stat="crds">7</strong></div><div><span>OCI Chart</span><strong data-stat="charts">4</strong></div><div><span>Hub 持有的凭据</span><strong data-stat="creds">无</strong></div></div>
+          </div>
+          <div class="figure" id="handshake" data-peering>
+            <div class="figure-head"><b>互联握手</b><small>逐步查看流程，或让它自动播放。</small></div>
+            <div class="figure-body"><svg viewBox="0 0 600 372" role="group" aria-label="互联握手"></svg></div>
+            <div class="figure-foot">
+              <div class="chips" data-peering-steps></div>
+              <div class="verdict" data-peering-caption aria-live="polite"></div>
+              <div class="figure-split"><div class="peer-lists" data-peering-lists></div><div class="mono-pane" data-peering-pane></div></div>
+              <small class="fig-note">两个独立的信任域。虚线只承载控制消息。</small>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="trust">
+        <div class="wrap">
+          <div class="section-head"><p class="eyebrow">信任模型</p><h2>每个集群保管自己的钥匙。</h2><p>每个集群保留自己的 API Server、CA、RBAC、调度器与生命周期。互联只分发认证与路由一个明确公告的服务所必需的内容。</p></div>
+          <div class="split"><div class="panel"><h3>由 Hub 分发</h3><ul><li><b>签名身份</b> · 由所有者侧 Agent 创建并保管</li><li><b>信任包</b> · 双方确认摘要后才安装</li><li><b>Gateway 端点</b> · 用于 QUIC 与 TLS 1.3 双向认证</li><li><b>服务公告</b> · 选定的 L4/L7 服务，绑定目标 Peer</li></ul></div><div class="panel other"><h3>从不同步</h3><ul><li><b>Kubernetes 凭据</b> · Hub 从不接收</li><li><b>PodCIDR 与 EndpointSlice</b> · 没有 Pod 地址跨越边界</li><li><b>远端 API 密钥</b> · 不分发 kubeconfig</li><li><b>托管访问</b> · ManagedAccessGrant 独立受控，默认关闭</li></ul></div></div>
+        </div>
+      </section>
+      <section class="section" id="components">
+        <div class="wrap">
+          <div class="section-head"><p class="eyebrow">组件</p><h2>一个控制面、一份访问合约、只读视图。</h2><p>四个 OCI Chart 独立发布。镜像以不可变的 sha256 摘要配置。</p></div>
+          <div class="rows">
+            <article class="row"><span class="idx">01</span><h3>Among Clusters</h3><p>Hub 负责汇合、CRD 与审计；所有者侧 Agent，以及一个不带 ServiceAccount Token 的独立 QUIC Gateway Pod。</p><a href="https://github.com/among-clusters/among-clusters" rel="noopener">among-clusters →</a></article>
+            <article class="row"><span class="idx">02</span><h3>ConnecTool</h3><p>供应商中立的合约，通过 OIDC、ToolHive MCP 工作负载与插件市场分发 AI 工具。不保存 OAuth Token。</p><a href="https://github.com/among-clusters/connectool" rel="noopener">connectool →</a></article>
+            <article class="row"><span class="idx">03</span><h3>Headlamp 检查</h3><p>经摘要校验的只读插件，查看 Peer、链路、公告与证据。</p><a href="https://github.com/among-clusters/headlamp-birfucate" rel="noopener">headlamp-birfucate →</a></article>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="install">
+        <div class="wrap install">
+          <div>
+            <div class="section-head"><p class="eyebrow">安装</p><h2>接入自己的集群，保留本地权威。</h2><p>在配置公网端点和已确认的 peer-bundle Secret 之前，Gateway 的 UDP 监听保持关闭。</p></div>
+            <ol class="steps"><li>安装 Hub，或加入已有的 Hub。</li><li>把签名的 Agent Chart 装到独立命名空间，镜像固定摘要。</li><li>给 Service 打上 peering.re8ch.com/advertise=true 和策略注解。</li></ol>
+            <div class="actions"><a class="button" href="https://github.com/among-clusters/among-clusters/blob/main/docs/SCENARIO-MATRIX.md" rel="noopener">场景矩阵 →</a></div>
+          </div>
+          <div class="code">
+            <div class="code-head"><span>export.sh</span><button class="copy" type="button" data-copy-target="code-among-clusters" data-copied="已复制">复制</button></div>
+            <pre id="code-among-clusters"><span class="c"># 把一个 Service 公告给已批准的对端</span>
+kubectl label service orders peering.re8ch.com/advertise=true
+kubectl annotate service orders \
+  peering.re8ch.com/protocol=tcp \
+  peering.re8ch.com/service-class=app.orders \
+  peering.re8ch.com/policy-ref=orders-policy \
+  peering.re8ch.com/target-peers=cluster-b \
+  peering.re8ch.com/ttl-seconds=300
+
+<span class="c"># 移除标签即撤销</span>
+kubectl label service orders peering.re8ch.com/advertise-</pre>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="family">
+        <div class="wrap">
+          <div class="section-head"><p class="eyebrow">开源云产品家族</p><h2>三份可以组合的合约。</h2><p>AdvFab 生产路径证据，Public Edge 用它回答 DNS，Among Clusters 让集群互联而不共享密钥。RE8CH Cloud 以托管服务形式运行这三者。</p></div>
+          <div class="family">
+            <a href="https://advfab.org/zh-CN/"><span class="fam-mark"><img src="../marks/advfab.svg" alt="" width="26" height="26"><b>AdvFab</b></span><p>Kubernetes 网络证据控制器。</p><small>开源</small></a>
+            <a href="https://public-edge.github.io/website/zh-CN/"><span class="fam-mark"><img src="../marks/public-edge.svg" alt="" width="26" height="26"><b>Public Edge</b></span><p>健康感知的公共入口与权威 DNS。</p><small>开源</small></a>
+            <a href="https://among-clusters.github.io/website/zh-CN/" aria-current="page"><span class="fam-mark"><img src="../marks/among-clusters.svg" alt="" width="26" height="26"><b>Among Clusters</b></span><p>面向 BYOC 服务的主权集群互联。</p><small>开源</small></a>
+            <a href="https://cluster.re8ch.com/zh-CN/"><span class="fam-mark"><img src="https://brand-assets.re8ch.com/PRODUCTS/cluster/SVG/icon-no-edge.svg" alt="" width="26" height="26"><b>RE8CH Cloud</b></span><p>基于这些项目构建的托管集群网络。</p><small>托管</small></a>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="wrap closing">
+          <div class="section-head"><h2>以可评审的成果持续建设。</h2><p>产品、文档、官网与可靠性工作都在 GitHub 跟进。私有拓扑、凭据与原始遥测不会进入公开路线图。</p></div>
+          <div class="actions"><a class="button primary" href="https://github.com/among-clusters/among-clusters/issues" rel="noopener">路线图</a><a class="button" href="https://github.com/among-clusters/among-clusters/blob/main/SECURITY.md" rel="noopener">安全</a></div>
+        </div>
+      </section>
+    </main>
+    <re8ch-footer locale="zh-CN" theme="light" language-options='[{"label":"English","value":"en","href":"../en/"},{"label":"简体中文","value":"zh-CN","href":"../zh-CN/"}]' language-mode="available" brand-logo="https://brand-assets.re8ch.com/SVG/logo.svg"></re8ch-footer>
+    </div>
+    <script type="application/json" id="site-copy">{"clusterA":"集群 A · 提供方","clusterB":"集群 B · 使用方","hubSub":"汇合点","agentSub":"身份","hubIdle":"不在数据路径上","crosses":"跨越边界","stays":"永不离开集群","steps":[{"label":"邀请","title":"一次性邀请","body":"邀请绑定租户、短期有效且只能使用一次。Hub 只保存它的哈希。","crosses":["邀请（Hub 只存哈希）"],"stays":["Kubeconfig 与 API 密钥","集群 CA 私钥"],"status":["ClusterIdentity|Ready","Peer|Pending"]},{"label":"确认","title":"双方确认摘要","body":"只有双方所有者都确认对方的信任包摘要后，Peer 才具备资格。","crosses":["信任包摘要","SPIFFE 兼容身份"],"stays":["私钥（由 Agent 保管）"],"status":["Peer|Ready","AuthenticatedLink|Accepted"]},{"label":"公告","title":"只公开打标的服务","body":"Agent 发送签名的 service.snapshot。只有 PeerPolicy 允许该发布方、对端、类别、协议、端口与方向时，Hub 才接受。","crosses":["签名的 ServiceAdvertisement"],"stays":["PodCIDR 与 Pod 地址","EndpointSlice"],"status":["ServiceAdvertisement|Accepted","ImportedService|Ready"]},{"label":"连接","title":"Gateway 直连 Gateway","body":"Gateway 通过 QUIC 上的 TLS 1.3 双向认证互联，并按 SPIFFE 服务身份路由。Hub 不承载任何应用流量。","crosses":["经 mTLS 的服务流量"],"stays":["ServiceAccount Token（Gateway 没有）"],"status":["AuthenticatedLink|Established","ImportedService|Ready"]},{"label":"撤销","title":"移除标签即撤销","body":"移除公告标签后，公告被撤回，使用方随即失去该服务。","crosses":["撤销消息"],"stays":["集群拥有的一切"],"status":["ServiceAdvertisement|Revoked","ImportedService|Removed"]}]}</script>
+    <script src="../peering.js?v=20261023-oss-1" defer></script>
+  </body>
+</html>
